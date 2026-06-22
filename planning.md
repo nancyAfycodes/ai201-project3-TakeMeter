@@ -72,16 +72,14 @@ Label Counts:
     - 'Anywhere can host it. We don’t need 48 teams and we don’t need 80000 seat stadiums charging a fortune. An affordable world cup dor fans would be far preferable to this, enough money is made off tv deals that we don’t need big expensive venues. '
     - ' The ambience has been meeeh at most, we have been in 3 games and only yesterday’s match between Netherlands and Sweden had an OK vibe; have you seen the ambience in Mexico? That is where the whole cup should’ve go to '
 
-- Contextual
-    - ' I was at a game and can confirm when I watched the replay on TV it sounded like the crowd was dead compared to what it was like in stadium '
+- Analytical/Predictive
+    - 'Isn't it risky to aim for 3rd? Not every 3rd place is making it out of group. Second place is a death sentence for us so our only hope is to destroy haiti while brazil struggle against Scotland, and honestly i don't see us scoring many goals. '
     - ' Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 2 points now so it's a very close group, hard to tell who will go through tbh '
 
 ---
 
 ## Edge Cases
 - Since most commentary are a reaction to a game, it is important to note that comments can fall between two distinct labels. For instance, 'HOW WAS THAT NOT A PK??? Sorry for yelling' can be considered as both a reaction and an observation. Reason being that the user is reacting to a play on the TV screen, based on an observation. In this case, I decided to label as a 'reaction' due to the qualifying word 'yelling'. Consequently, I used examples that are less ambiguous when selecting comments that are used in the project. 
-That's a solid edge case entry. Here's a polished and expanded version ready for your `planning.md`, keeping your original example but strengthening the reasoning and adding two more difficult cases drawn from our earlier discussions:
-
 ---
 
 **Edge Cases & Difficult Labeling Decisions**
