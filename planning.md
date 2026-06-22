@@ -125,36 +125,16 @@ The above comment uses group standing logic and match predictions to arrive at a
 ---
 
 ## AI Tool Plan
-- Label-
+- Label stress-testing: Using Claude, I was able to refine my label definitions. For instance, I'll post a comment and its accompanying label, then state my reason. Based on the label definition, Claude will explain why my reasoning may not meet the label definition. For example, my original labels were, observation, reaction, opinion and contextual. However, the comments I had originally labeled as 'contextual' could easily have been categorizes as either ' observation or opinion'. Consequently, Claude identified 'contextual' label and suggest the use of 'analytical/predictive', for it was a better fit. 
+
+- Annotation Assistance - Data was hand-labeled using label definitions, I didn't use Claude to label my data. 
 
 
 **Milestone 3 — Individual tool implementations:**
-- Completed in the planning phase, since stretch features was included as part of the planning step. The project contains the following tools:
-     - search_listings: searches database based on user input
-     - suggest_outfit: suggests outfit pairings based on result from search
-     - create_fit_card: creates outfit pairings 
-     - retry_with_fallback: error handling 
-     - compare_prices: compare prices based on search_listings
-     - trend_awareness: suggest trends based on result from search_listing
-     - style_profile_memory:saves results for future reference or creates a new list for a new user
-- created a test file to test for each tool. All test, 41 in total, passed for each tool
-- updated LLM model from `llama3-8b-8192` to `llama-3.1-8b-instant`, as llama3-8b-8192 has been decommissioned. This was flagged when running tools.py 
+- 
 
 **Milestone 4 — Planning loop and state management:**
-- Loop is initialized at the start of each `run_agent` and the user does not re-enter the same information as follows:
-session = {
-    "query": str,               # original user query
-    "parsed": dict,             # description, size, max_price
-    "search_results": list,     # all matching listings
-    "selected_item": dict,      # top result → passed into suggest_outfit
-    "wardrobe": dict,           # user's wardrobe → passed into suggest_outfit
-    "similar_items": list,      # output of compare_prices
-    "outfit_suggestion": str,   # output of suggest_outfit → passed into create_fit_card
-    "trend_info": str,          # output of trend_awareness
-    "fit_card": str,            # output of create_fit_card
-    "fallback_message": str,    # set if retry_with_fallback loosened any filters
-    "error": str | None,        # set on early exit; None on success
-}
+- 
 
 ---
 
