@@ -6,17 +6,31 @@
 - Analyzed comments on the various topics related to the current world cup, World Cup 2026. Obtained comments from the threads involving discussions as well as pre-match, match, and post-match comments regarding select games.
 ---
 
-## State Management
-- Labels: selected comments are labeled as observation, opinion, reaction, and contextual. Here are example of each label
-    - Observation:
-    - Opinion: 
-    - Reaction:
-    - Contextual: 
-
+## Label Definition
+- The definition of each label is as follows:
+    - Observation: re-states obvious facts 
+    - Opinion: provides justification based on an observable question and/or reaction
+    - Reaction: response to comments that involve varied emotion
+    - Contextual: explanation with a reference
 
 ---
 
-## Error Handling
+## Label and Example
+- Observation:
+    - ' where some of the countries fans can't get visa to support their teams kinda unfair for them '
+    - ' Could be most of the stadiums are huge bowls. Not even a hint of roof or cover, maybe the sound is just getting lost.'
+
+- Reaction:
+    - ' No thank you '
+    - ' With those ticket prices? Great way to completely ruin it '
+
+- Opinion
+    - 'Anywhere can host it. We don’t need 48 teams and we don’t need 80000 seat stadiums charging a fortune. An affordable world cup dor fans would be far preferable to this, enough money is made off tv deals that we don’t need big expensive venues. '
+    - ' The ambience has been meeeh at most, we have been in 3 games and only yesterday’s match between Netherlands and Sweden had an OK vibe; have you seen the ambience in Mexico? That is where the whole cup should’ve go to '
+
+- Contextual
+    - ' I was at a game and can confirm when I watched the replay on TV it sounded like the crowd was dead compared to what it was like in stadium '
+    - ' Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 2 points now so it's a very close group, hard to tell who will go through tbh '
 
 
 
