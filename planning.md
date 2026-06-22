@@ -123,6 +123,12 @@ The above comment uses group standing logic and match predictions to arrive at a
 This comment initially reads as Reaction due to the emoji, humor, and personal fan identification ("as an Egyptian fan"). However, removing the casual tone, it illustrates that the primary substance is conditional reasoning, as the speaker is evaluating two possible outcomes and their implications against a prior prediction. Decision: Analytical/Predictive. The decision rule applied: casual tone, humor, and emojis doesn't determine the label, but the underlying structure of the comment. If the primary substance is if/then reasoning about outcomes, it is Analytical/Predictive regardless of how conversational or emotional the delivery feels.
 
 ---
+**Edge Case 6: Reaction vs. Analytical/Predictive**
+
+*"Really genius? So with 12 teams all vying for 8 knockout round slots, you don't think goal differential will matter? 12 teams will all have 2 or 4 points. They always do. Then it comes down to goals. A national team's entire existence can be validated by advancing out of the group stage, and you don't think goal differential is going to decide any of it. I don't think you're too good at how math works. Try adding up the number of games versus the 12 third place teams. I'll wait…"*
+This comment initially reads as Reaction due to its aggressive, sarcastic, and confrontational tone ("Really genius?", "I'll wait…"). However, removing the reactionary tone, it's main point argues about goal differential and qualification scenarios. Decision: Analytical/Predictive. The decision rule applied: aggressive or contemptuous tone does not determine the label any more than humor or warmth does. If the main argument is explicit mathematical or logical reasoning, it is Analytical/Predictive regardless of how hostile the delivery feels.
+
+---
 
 ## Evaluation Metrics 
 - The overall project would be measured on how the LLM model `distilbert-base-uncased` is able to distinguish between labels especially nuance. Since some of the comments contain abbreviation and slang, it is important that the model is able to 'understand' the language the user uses in expressing thoughts and opinions in regards to the game being played as well as responses to comments made in each thread.
