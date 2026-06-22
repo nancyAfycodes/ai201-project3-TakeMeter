@@ -117,6 +117,12 @@ This comment opens with what sounds like a neutral claim but quickly shifts into
 The above comment uses group standing logic and match predictions to arrive at a conclusion. The observation elements ('not every 3rd place makes it') helps in explaining the logic, but it is not the main aim of the comment.
 
 ---
+**Edge Case 5: Reaction vs. Analytical/Predictive**
+
+*"As an Egyptian fan, I have to admit this is peak self-awareness 😂. If Egypt somehow makes it out of the group this time, this video is going to age horribly. If not... they called it perfectly before the tournament even started."*
+This comment initially reads as Reaction due to the emoji, humor, and personal fan identification ("as an Egyptian fan"). However, removing the casual tone, it illustrates that the primary substance is conditional reasoning, as the speaker is evaluating two possible outcomes and their implications against a prior prediction. Decision: Analytical/Predictive. The decision rule applied: casual tone, humor, and emojis doesn't determine the label, but the underlying structure of the comment. If the primary substance is if/then reasoning about outcomes, it is Analytical/Predictive regardless of how conversational or emotional the delivery feels.
+
+---
 
 ## Evaluation Metrics 
 - The overall project would be measured on how the LLM model `distilbert-base-uncased` is able to distinguish between labels especially nuance. Since some of the comments contain abbreviation and slang, it is important that the model is able to 'understand' the language the user uses in expressing thoughts and opinions in regards to the game being played as well as responses to comments made in each thread.
