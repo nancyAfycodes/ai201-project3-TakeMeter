@@ -98,4 +98,4 @@ Then open the localhost URL shown in your terminal (usually `http://localhost:78
 
 ---
 ## Video Demo
-[Demo Video](https://youtu.be/EDhRE7JD9E8)
+[Demo Video]()
