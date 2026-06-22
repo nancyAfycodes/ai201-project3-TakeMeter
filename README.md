@@ -7,7 +7,11 @@ TakeMeter is  a fine-tuned text classifier that evaluates discourse quality in a
 - Data used in the project was obtained from World Cup 2026 subreddit. Comments were obtained from threads that involved discussion, pre-match, match, and post-match. Most of the comments relied on 'match' threads, since it contained a mixture of commentary involving all stages of the game. Comments were labeled as either an observation, reaction, opinion, or contextual. The labels were chosen as most comments seems to fall into one of the four labeled categories above. Since I read each comment, I made the decision to include or exclude comments based on the label criteria I had chosen.  
 ---
 
-## Tools
+## Label Count Distribution 
+- Observation:
+- Reaction: 
+- Opinion:
+- Contextual: 
 
 ---
 
@@ -16,7 +20,9 @@ TakeMeter is  a fine-tuned text classifier that evaluates discourse quality in a
 
 ---
 
-## State management
+## Example Labels
+- Observation:
+    - 
 
 
 ---
