@@ -3,7 +3,7 @@
 ---
 
 ## Project Description
-- Analyzed comments on the various topics related to the current world cup, World Cup 2026. Obtained comments from the discussion sections as well as pre-match, match, and post-match comments regarding select games.
+- Analyzed comments on the various topics related to the current world cup, World Cup 2026. Obtained comments from the threads involving discussions as well as pre-match, match, and post-match comments regarding select games.
 ---
 
 ## State Management
