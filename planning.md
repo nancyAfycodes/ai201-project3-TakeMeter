@@ -32,12 +32,10 @@
     - ' I was at a game and can confirm when I watched the replay on TV it sounded like the crowd was dead compared to what it was like in stadium '
     - ' Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 2 points now so it's a very close group, hard to tell who will go through tbh '
 
-
-
 ---
 
-## Architecture
-
+## Edge Cases
+- Since most commentary are a reaction to a game, it is important to note that comments can fall between two distinct labels. For instance, 'HOW WAS THAT NOT A PK??? Sorry for yelling' can be considered as both a reaction and an observation. Reason being that the user is reacting to a play on the TV screen, based on an observation. In this case, I decided to label as a 'reaction' due to the qualifying word 'yelling'. Consequently, I used examples that are less ambiguous when selecting comments that are used in the project. 
 
 ---
 
