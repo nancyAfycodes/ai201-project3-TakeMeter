@@ -35,6 +35,8 @@ A comment that uses statistics, standings, tactical reasoning, or logical if/the
 
 *Example: "Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 4 points now so it's a very close group, hard to tell who will go through tbh"*
 
+NB. Numbers alone don't make a comment Analytical/Predictive. The comment must use those numbers asa means of arriving at a conclusion or prediction. If the numbers are simply being reported, then it's an Observation.
+
 ---
 
 **Decision Rules**
@@ -43,6 +45,7 @@ A comment that uses statistics, standings, tactical reasoning, or logical if/the
 - If a comment states something without argument or prediction → Observation
 - If the emotion is the point and reasoning is absent or minimal → Reaction
 - When in doubt between Opinion and Analytical/Predictive, ask: *is the comment reasoning toward a conclusion using data/tactics, or expressing a stance based on values/preferences?*
+- If a comment is structured as an argument with multiple supporting reasons toward a conclusion, label it Opinion — even if it contains emotional language or analytical observations.
 
 ---
 
