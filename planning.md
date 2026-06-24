@@ -51,12 +51,12 @@ NB. Numbers alone don't make a comment Analytical/Predictive. The comment must u
 ---
 
 ## Counts
-Data Collected  - 220
+Data Collected  - 260
 Label Counts:
-    - Observation: 
-    - Reaction:
-    - Opinion:
-    - Analytical / Predictive:
+    - Observation: 65
+    - Reaction: 83
+    - Opinion: 71
+    - Analytical / Predictive: 41
 ---
 
 ## Data Collection Plan
