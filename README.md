@@ -8,10 +8,11 @@ TakeMeter is  a fine-tuned text classifier that evaluates discourse quality in a
 ---
 
 ## Label Count Distribution 
-- Observation:
-- Reaction: 
-- Opinion:
-- Analytical/ Predictive: 
+- Observation: 65
+- Reaction: 83
+- Opinion: 71
+- Analytical/ Predictive: 41
+- Total - 260 
 
 ---
 
