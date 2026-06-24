@@ -46,6 +46,7 @@ NB. Numbers alone don't make a comment Analytical/Predictive. The comment must u
 - If the emotion is the point and reasoning is absent or minimal → Reaction
 - When in doubt between Opinion and Analytical/Predictive, ask: *is the comment reasoning toward a conclusion using data/tactics, or expressing a stance based on values/preferences?*
 - If a comment is structured as an argument with multiple supporting reasons toward a conclusion, label it Opinion — even if it contains emotional language or analytical observations.
+- Conditional language ('had', 'would have', 'if only') doesn't automatically mean Analytical/Predictive. Consider time orientation, backward looking conditionals are Opinion, forward looking conditionals are Analytical/Predictive.
 
 ---
 
