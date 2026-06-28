@@ -94,10 +94,7 @@ put on. What Uruguay team will we get vs Spain"
 **Predicted label:** Analytical/Predictive (confidence: 0.46)  
 
 **Analysis:** I think the closing question ("What Uruguay team will we get vs Spain") 
-triggered an Analytical/Predictive prediction despite the comment being 
-primarily emotional. The model interpreted a rhetorical question about an 
-upcoming match as forward looking analytical reasoning, as can be seen from the very low 
-confidence (0.46) score. This illustrates a systematic weakness: rhetorical questions in an emotional contexts look identical to predictive questions in an analytical contexts. Of note is that comments labeled as analytical/predictive was lower than all other labels.
+triggered an Analytical/Predictive prediction despite the comment being primarily emotional. The model interpreted a rhetorical question about an upcoming match as forward looking analytical reasoning, as can be seen from the very low confidence (0.46) score. This illustrates a systematic weakness: rhetorical questions in an emotional contexts look identical to predictive questions in an analytical contexts. Of note is that comments labeled as analytical/predictive was lower than all other labels.
 
 ---
 
@@ -113,13 +110,10 @@ The intended taxonomy was built around a functional distinction — what is
 the comment doing — rather than surface features. The model did not perform properly wherever function and surface features diverged:
 
 - **Tone masking function:** Aggressive or sarcastic delivery caused the 
-  model to predict Opinion even when the underlying substance was 
-  Analytical/Predictive (Wrong Prediction #2). Warm or casual tone caused 
-  it to predict Reaction even when an argument was being made.
+  model to predict Opinion even when the underlying substance was Analytical/Predictive (Wrong Prediction #2). Warm or casual tone caused it to predict Reaction even when an argument was being made.
 
 - **Observation as default:** The model treated Observation as a catch-all 
-  for low-confidence predictions, misclassifying 7 out of 22 non-Observation 
-  examples into that label. This mirrors the difficulty experienced during labeling , which is Observation is the absence of strong signals rather than the presence of them, thereby making it the hardest label for both humans and models to apply consistently.
+  for low-confidence predictions, misclassifying 7 out of 22 non-Observation examples into that label. This mirrors the difficulty experienced during labeling,which is Observation is the absence of strong signals rather than the presence of them, thereby making it the hardest label for both humans and models to apply consistently.
 
 - **Reaction/Opinion boundary:** The model consistently confused emotional 
   comments that contain argument structure (Reaction) with genuine Opinion. 
