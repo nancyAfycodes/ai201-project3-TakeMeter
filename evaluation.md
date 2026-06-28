@@ -98,6 +98,144 @@ triggered an Analytical/Predictive prediction despite the comment being primaril
 
 ---
 
+## Error Pattern Analysis
+
+To identify systematic patterns beyond individual wrong predictions, all 
+15 misclassified examples were reviewed collectively. Four distinct error 
+patterns emerged, each reflecting a specific boundary the model failed to 
+learn reliably.
+
+---
+
+### Pattern 1 — Reaction misclassified as Observation (3 cases)
+**Examples:** #3, #4, #5
+
+Comments affected:
+- "Agreed. For better or worse, England's my team. I'm Really excited 
+  that Scotland's in it though and am rooting for them to go far 💪"
+- "NO! Don't get excited! No expectations until the QF..."
+- "definitely NO. unfairness about matches and political things"
+
+**Pattern:** All three are short, low-information comments where the 
+emotional signal is understated or indirect. The model appears to treat 
+brevity and low information density as signals for Observation, the 
+default label when no strong signal is present, regardless of emotional 
+content.
+
+**Why this boundary is hard:** Observation is defined by the absence of 
+strong signals (no argument, no prediction, no emotion). Short Reaction 
+comments also lack strong signals by definition, emotion is present 
+but minimal. The model learned Observation as a residual category, which 
+causes it to misclassify low-energy Reactions.
+
+**What would fix it:** More training examples of short, understated 
+Reaction comments would help the model learn that brevity alone does not 
+signal Observation. A tighter Observation definition that explicitly 
+excludes any evaluative language — however minimal — could also help.
+
+---
+
+### Pattern 2 — Reaction misclassified as Opinion (3 cases)
+**Examples:** #6, #8, #9
+
+Comments affected:
+- "So? Why are people always looking for goals, this is soccer..."
+- "I feel bad for whoever went for this match. This was arguably the 
+  worst match of the cup!..."
+- "Great game. I know it'll blow the minds of some people that a 0-0 
+  match was entertaining but i don't care. I love this sport."
+
+**Pattern:** All three comments contain counterargument structure, with the 
+speaker acknowledging an opposing view before expressing their own 
+reaction. The model learned that counterargument framing signals Opinion, 
+but missed that these comments never develop that framing into a genuine 
+argument; they collapse back into emotional expression.
+
+**Why this boundary is hard:** The linguistic surface of "I know some 
+people think X, but I feel Y" is identical whether the speaker is making 
+an argument (Opinion) or dismissing a counterpoint to return to feeling 
+(Reaction). The distinction is functional, not linguistic, for the model 
+cannot reliably detect whether the counterargument is being engaged with 
+or dismissed.
+
+**What would fix it:** More training examples that show counterargument 
+structure collapsing into emotional expression rather than developing into 
+an argument. This is the hardest boundary to fix with data alone — it may 
+require a more explicit decision rule encoded in the label definitions.
+
+---
+
+### Pattern 3 — Opinion misclassified as Observation (3 cases)
+**Examples:** #10, #13, #14
+
+Comments affected:
+- "The ambience has been meeeh at most... have you seen the ambience 
+  in Mexico? That is where the whole cup should've go to"
+- "So far, the most exciting games, Croatia and England have performed 
+  very well... England has shown a stronger ability to win the game"
+- "Had Vozinha put just a little of what he did against Spain, Uruguay 
+  would still be at 1 point"
+
+**Pattern:** All three use neutral-sounding or descriptive language to 
+make evaluative claims. The model missed the persuasive intent because 
+the surface language resembles neutral reporting.
+
+**Why this boundary is hard:** This is the most consistent annotation 
+challenge documented throughout the labeling process, factual-sounding 
+language that contains embedded normative claims. The model learned 
+Observation as neutral declarative sentences, but many Opinion comments 
+use declarative structure to make evaluative arguments.
+
+**What would fix it:** More training examples that demonstrate Opinion 
+comments using neutral-sounding language. Explicitly flagging evaluative 
+adjectives ("better", "should've", "meeeh") as Opinion signals in 
+training data would help the model learn the distinction.
+
+---
+
+### Pattern 4 — Analytical/Predictive misclassified as Opinion (1 case)
+**Example:** #12
+
+Comment affected:
+- "Really genius? So with 12 teams all vying for 8 knockout round 
+  slots... Try adding up the number of games versus the 12 third place 
+  teams. I'll wait…"
+
+**Pattern:** Aggressive, sarcastic tone overwhelmed mathematical reasoning 
+underneath. The model classified based on delivery rather than substance.
+
+**Why this boundary is hard:** The model correctly learned that sarcasm 
+and confrontational language signal Opinion in most cases. 
+This comment is the exception where hostile delivery wraps genuine 
+analytical content. With only 29 Analytical/Predictive training examples, 
+the model had insufficient exposure to this rare combination.
+
+**What would fix it:** More Analytical/Predictive training examples with 
+aggressive or sarcastic delivery. This is a data quantity problem as much 
+as a definition problem — the pattern exists in the taxonomy but is 
+underrepresented in training.
+
+---
+
+### Summary of Error Patterns
+
+| Pattern | Cases | Root Cause |
+|---------|-------|------------|
+| Reaction → Observation | 3 | Model treats brevity as Observation signal |
+| Reaction → Opinion | 3 | Counterargument framing overwhelms emotional substance |
+| Opinion → Observation | 3 | Neutral-sounding language masks persuasive intent |
+| Analytical/Predictive → Opinion | 1 | Aggressive tone overwhelms analytical substance |
+
+**Dominant confused pair:** Reaction is the most misclassified label — 
+6 of 17 errors (35%) involve true Reaction comments being assigned another 
+label. This reflects the fundamental challenge of Reaction as a label: it 
+is defined by the absence of reasoning rather than the presence of a 
+distinctive signal, making it the hardest label for the model to identify 
+reliably when emotional expression is understated or wrapped in other 
+linguistic structures.
+
+---
+
 ### Reflection: What the Model Learned vs What Was Intended
 
 #### What the model learned well
