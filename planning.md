@@ -3,175 +3,330 @@
 ---
 
 ## Project Description
-- Analyzed comments on the various topics related to the current world cup, World Cup 2026. Obtained comments from the threads involving discussions as well as pre-match, match, and post-match comments regarding select games.
+
+TakeMeter analyzes discourse quality in World Cup 2026 Reddit communities.
+Comments were collected from r/worldcup across five thread 
+types: discussion, pre-match, match, megathread, and post-match. Match and megathread threads were the primary source as they naturally contain the full spectrum of comment 
+types within a single thread. Comments were classified into four labels, 
+Observation, Reaction, Opinion, and Analytical/Predictive. Theses were chosen, for they capture the most meaningful and consistent distinctions in how fans engage with the sport online.
+
 ---
 
 ## Label Taxonomy
-- The definition of each label is as follows:
 
 **1. Observation**
-A comment that states a factual or descriptive claim without taking a position, providing reasoning, and/or referencing external knowledge. The speaker reports what they see or experience without editorializing.
+A comment that states a factual or descriptive claim without taking a 
+position, providing reasoning, or referencing external knowledge. The 
+speaker reports what they see or experience without editorializing.
 
-*Example: "where some of the countries fans can't get a visa to support their teams"*
+*Example: "where some of the countries fans can't get a visa to support 
+their teams"*
 
 ---
 
 **2. Opinion**
-In this case, the comment takes a clear stance and provides reasoning or justification to support it. May make use of comparisons or references as supporting evidence, but the argument or conclusion is the primary substance.
+A comment that takes a clear stance and provides reasoning or justification 
+to support it. May use comparisons or references as supporting evidence, 
+but the argument or conclusion is the primary substance.
 
-*Example: "The US might be one of the best hosts. That's exactly why we should save it for special occasions, not turn the World Cup into a permanent residence."*
+*Example: "The US might be one of the best hosts. That's exactly why we 
+should save it for special occasions, not turn the World Cup into a 
+permanent residence."*
 
 ---
 
 **3. Reaction**
-A comment that expresses an emotional or visceral response to a match event, decision, or situation. Minimal reasoning is provided; the emotion itself is the primary substance.
+A comment that expresses an emotional or visceral response to a match 
+event, decision, or situation. Minimal reasoning is provided — the emotion 
+itself is the primary substance.
 
 *Example: "What atmosphere?"*
 
 ---
 
 **4. Analytical/Predictive**
-A comment that uses statistics, standings, tactical reasoning, or logical if/then thinking to analyze a current situation or predict an outcome. The analysis or prediction is the primary substance.
+A comment that uses statistics, standings, tactical reasoning, or logical 
+if/then thinking to analyze a current situation or predict an outcome. The 
+analysis or prediction is the primary substance.
 
-*Example: "Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 4 points now so it's a very close group, hard to tell who will go through tbh"*
+*Example: "Either would have 4 points with a win, which would most likely 
+be good for at least second, but Iran and Belgium both have 2 points now 
+so it's a very close group, hard to tell who will go through tbh"*
 
-NB. Numbers alone don't make a comment Analytical/Predictive. The comment must use those numbers asa means of arriving at a conclusion or prediction. If the numbers are simply being reported, then it's an Observation.
-
----
-
-**Decision Rules**
-- If a comment uses numbers or comparisons to reach a conclusion or prediction → Analytical/Predictive
-- If a comment uses a reference or comparison to argue a point → Opinion
-- If a comment states something without argument or prediction → Observation
-- If the emotion is the point and reasoning is absent or minimal → Reaction
-- When in doubt between Opinion and Analytical/Predictive, ask: *is the comment reasoning toward a conclusion using data/tactics, or expressing a stance based on values/preferences?*
-- If a comment is structured as an argument with multiple supporting reasons toward a conclusion, label it Opinion — even if it contains emotional language or analytical observations.
-- Conditional language ('had', 'would have', 'if only') doesn't automatically mean Analytical/Predictive. Consider time orientation, backward looking conditionals are Opinion, forward looking conditionals are Analytical/Predictive.
+> **Note:** Numbers alone don't make a comment Analytical/Predictive. The 
+> comment must use those numbers to reason toward a conclusion or 
+> prediction. If the numbers are simply being reported, it is Observation.
 
 ---
 
-## Counts
-Data Collected  - 260
-Label Counts:
-    - Observation: 65
-    - Reaction: 83
-    - Opinion: 71
-    - Analytical / Predictive: 41
+## Decision Rules
+
+- If a comment uses numbers or standings to reason toward a conclusion or 
+  prediction → **Analytical/Predictive**
+- If a comment uses a reference or comparison to argue a point → **Opinion**
+- If a comment states something without argument or prediction → 
+  **Observation**
+- If the emotion is the point and reasoning is absent or minimal → 
+  **Reaction**
+- If a comment is structured as an argument with multiple supporting 
+  reasons toward a conclusion → **Opinion**, even if it contains emotional 
+  language or analytical observations
+- Conditional language ("had", "would have", "if only") doesn't 
+  automatically mean Analytical/Predictive — backward looking conditionals 
+  are Opinion, forward looking conditionals are Analytical/Predictive
+- Tone (aggressive, humorous, warm, casual) does not determine the label — 
+  the underlying structure does
+- When in doubt between Opinion and Analytical/Predictive, ask: *is the 
+  comment reasoning toward a conclusion using data/tactics, or expressing 
+  a stance based on values/preferences?*
+
 ---
 
 ## Data Collection Plan
-- Data was collected by reviewing several World Cup 2026 threads on current live games as well as completed matches. My main aim is to read as much comments as possible, which was then used to create labels for each comment. 
----
 
-## Label Taxonomy Example
-- Observation:
-    - ' where some of the countries fans can't get visa to support their teams kinda unfair for them '
-    - ' Could be most of the stadiums are huge bowls. Not even a hint of roof or cover, maybe the sound is just getting lost.'
+Data was collected manually by reading through World Cup 2026 threads on r/worldcup. Threads were selected across four types: discussion, pre-match, match, megathread and post-match. Comments were copied into an Excel file with the following columns: id, text, label, source_subreddit, thread_type, thread_url; CSV file was created using the first three columns, if, text, label.
 
-- Reaction:
-    - ' No thank you '
-    - ' With those ticket prices? Great way to completely ruin it '
+Comments were selected based on whether they clearly fit one of the four 
+label categories. Crude, spam, or highly ambiguous comments were 
+excluded. All comments are in English.
 
-- Opinion
-    - 'Anywhere can host it. We don’t need 48 teams and we don’t need 80000 seat stadiums charging a fortune. An affordable world cup dor fans would be far preferable to this, enough money is made off tv deals that we don’t need big expensive venues. '
-    - ' The ambience has been meeeh at most, we have been in 3 games and only yesterday’s match between Netherlands and Sweden had an OK vibe; have you seen the ambience in Mexico? That is where the whole cup should’ve go to '
-
-- Analytical/Predictive
-    - 'Isn't it risky to aim for 3rd? Not every 3rd place is making it out of group. Second place is a death sentence for us so our only hope is to destroy haiti while brazil struggle against Scotland, and honestly i don't see us scoring many goals. '
-    - ' Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 2 points now so it's a very close group, hard to tell who will go through tbh '
+A targeted second collection pass was conducted specifically for 
+Analytical/Predictive comments after an initial label distribution check 
+revealed that label was underrepresented at 8.6% of the dataset. 
+Pre-match and megathread threads and group standings discussion threads were the primary 
+sources for this pass.
+NB. megathread is a combination thread that contains commentary related to pre-match, match, and post-match comments.
 
 ---
 
-## Edge Cases
-- Since most commentary are a reaction to a game, it is important to note that comments can fall between two distinct labels. For instance, 'HOW WAS THAT NOT A PK??? Sorry for yelling' can be considered as both a reaction and an observation. Reason being that the user is reacting to a play on the TV screen, based on an observation. In this case, I decided to label as a 'reaction' due to the qualifying word 'yelling'. Consequently, I used examples that are less ambiguous when selecting comments that are used in the project. 
+## Label Distribution
+
+| Label | Count | Percentage |
+|-------|-------|------------|
+| Observation | 65 | 25.0% |
+| Reaction | 83 | 31.9% |
+| Opinion | 71 | 27.3% |
+| Analytical/Predictive | 41 | 15.8% |
+| **Total** | **260** | **100%** |
+
+### Train / Validation / Test Split (70/15/15, stratified)
+
+| Label | Train | Validation | Test |
+|-------|-------|------------|------|
+| Observation | 45 | 10 | 10 |
+| Reaction | 58 | 13 | 12 |
+| Opinion | 50 | 10 | 11 |
+| Analytical/Predictive | 29 | 6 | 6 |
+| **Total** | **182** | **39** | **39** |
+
 ---
 
-**Edge Cases & Difficult Labeling Decisions**
+## Labeling Process
 
-Since most World Cup commentary is inherently reactive, for users are responding to live match events, referee decisions, or ongoing group standings, several comments carry signals from multiple labels simultaneously. Below are three genuinely difficult cases encountered during annotation, along with the decision made and the reasoning behind it.
+Comments were labeled manually by a single annotator in two passes:
+
+1. **Collection pass** — comments were copied into a CSV with metadata 
+   and no label assigned.
+2. **Annotation pass** — each comment was assigned one of four labels 
+   based on the definitions and decision rules above.
+
+After an initial labeling pass, label definitions were refined based on 
+patterns observed in the data. Most notably, the original "Contextual" 
+label was redefined as "Analytical/Predictive" to more accurately describe
+the forward-looking reasoning pattern it was intended to identify. All 220 
+original comments were re-labeled from scratch after definitions were 
+finalized to ensure consistency.
+
+NB. Since Analytical/Predictive had the lowest about of comments, an additional 40 was collected, to meet the required 15% threshold; therefore, total comments is 260. 
+
+---
+
+## Edge Cases & Difficult Labeling Decisions
+
+Since most World Cup commentary is inherently reactive, users are responding to live match events, referee decisions, or ongoing group standings, many comments carry signals from multiple labels simultaneously. Below are six difficult cases encountered during 
+annotation, along with the decision made and the reasoning behind it.
 
 ---
 
 **Edge Case 1: Reaction vs. Observation**
 *"HOW WAS THAT NOT A PK??? Sorry for yelling"*
 
-This comment could be labeled either Reaction or Observation. The user is responding to a specific play (Observation), however, the all-caps phrasing and explicit acknowledgment of yelling signals that the emotion is the primary substance. **Decision: Reaction.** The qualifying word "yelling" confirms the speaker is aware they are emoting rather than reporting. When emotional expression dominates the form of a comment, even if grounded in something observable, Reaction takes precedence.
+This comment could be labeled either Reaction or Observation. The user is 
+responding to a specific play (Observation), but the all-caps phrasing and 
+explicit acknowledgment of yelling signals that emotion is the primary 
+substance. **Decision: Reaction.** The qualifying word "yelling" confirms 
+the speaker is aware they are emoting rather than reporting. When emotional 
+expression dominates the form of a comment, even if grounded in something 
+observable, Reaction takes precedence.
 
 ---
 
 **Edge Case 2: Opinion vs. Analytical/Predictive**
-*"Either would have 4 points with a win, which would most likely be good for at least second, but Iran and Belgium both have 2 points now so it's a very close group, hard to tell who will go through tbh"*
+*"Either would have 4 points with a win, which would most likely be good 
+for at least second, but Iran and Belgium both have 2 points now so it's 
+a very close group, hard to tell who will go through tbh"*
 
-This comment uses group standings data, which initially suggests Contextual (later redefined as Analytical/Predictive). However, the reasoning is being used to reach a conclusion ("hard to tell who will go through") rather than simply presenting data. **Decision: Analytical/Predictive.** The decision rule applied: if a comment uses numbers or standings to reason toward a prediction or conclusion, it is Analytical/Predictive regardless of how uncertain or casual the tone is.
+This comment uses standings data, which initially suggested Contextual 
+(later redefined as Analytical/Predictive). However, the reasoning is 
+being used to reach a conclusion ("hard to tell who will go through") 
+rather than simply presenting data. **Decision: Analytical/Predictive.** 
+The decision rule applied: if a comment uses numbers or standings to reason 
+toward a prediction or conclusion, it is Analytical/Predictive regardless 
+of how uncertain or casual the tone is.
 
 ---
 
 **Edge Case 3: Observation vs. Opinion**
-*"Anywhere can host it. We don't need 48 teams and we don't need 80000 seat stadiums charging a fortune. An affordable world cup for fans would be far preferable to this."*
+*"Anywhere can host it. We don't need 48 teams and we don't need 80000 
+seat stadiums charging a fortune. An affordable world cup for fans would 
+be far preferable to this."*
 
-This comment opens with what sounds like a neutral claim but quickly shifts into a normative argument about what the World Cup should look like. The presence of "we don't need" and "far preferable" signals value-based reasoning rather than neutral description. **Decision: Opinion.** When a comment moves from describing what is to arguing what should be, it crosses from Observation into Opinion.
+This comment opens with what sounds like a neutral claim but quickly shifts 
+into a normative argument about what the World Cup should look like. The 
+presence of "we don't need" and "far preferable" signals value-based 
+reasoning rather than neutral description. **Decision: Opinion.** When a 
+comment moves from describing what is to arguing what should be, it crosses 
+from Observation into Opinion.
 
 ---
+
 **Edge Case 4: Analytical/Predictive vs. Observation**
-*"Isn't it risky to aim for 3rd? Not every 3rd place is making it out of group. Second place is a death sentence for us so our only hope is to destroy haiti while brazil struggle against Scotland, and honestly i don't see us scoring many goals."*
+*"Isn't it risky to aim for 3rd? Not every 3rd place is making it out of 
+group. Second place is a death sentence for us so our only hope is to 
+destroy Haiti while Brazil struggle against Scotland, and honestly I don't 
+see us scoring many goals."*
 
-The above comment uses group standing logic and match predictions to arrive at a conclusion. The observation elements ('not every 3rd place makes it') helps in explaining the logic, but it is not the main aim of the comment.
+This comment uses group standing logic and match predictions to arrive at 
+a conclusion. The observation elements ("not every 3rd place makes it") 
+serve as premises in the reasoning, not the primary substance. 
+**Decision: Analytical/Predictive.** The comment is fundamentally reasoning 
+toward a prediction about qualification using conditional match scenarios.
 
 ---
+
 **Edge Case 5: Reaction vs. Analytical/Predictive**
+*"As an Egyptian fan, I have to admit this is peak self-awareness 😂. If 
+Egypt somehow makes it out of the group this time, this video is going to 
+age horribly. If not... they called it perfectly before the tournament 
+even started."*
 
-*"As an Egyptian fan, I have to admit this is peak self-awareness 😂. If Egypt somehow makes it out of the group this time, this video is going to age horribly. If not... they called it perfectly before the tournament even started."*
-This comment initially reads as Reaction due to the emoji, humor, and personal fan identification ("as an Egyptian fan"). However, removing the casual tone, it illustrates that the primary substance is conditional reasoning, as the speaker is evaluating two possible outcomes and their implications against a prior prediction. Decision: Analytical/Predictive. The decision rule applied: casual tone, humor, and emojis doesn't determine the label, but the underlying structure of the comment. If the primary substance is if/then reasoning about outcomes, it is Analytical/Predictive regardless of how conversational or emotional the delivery feels.
+This comment initially reads as Reaction due to the emoji, humor, and 
+personal fan identification. However, the primary substance is explicit 
+conditional reasoning, the speaker is evaluating two possible outcomes 
+and their implications against a prior prediction. **Decision: 
+Analytical/Predictive.** Casual tone, humor, and emojis do not determine 
+the label, its underlying structure does. If the primary substance is 
+if/then reasoning about outcomes, it is Analytical/Predictive regardless 
+of how conversational or emotional the delivery feels.
 
 ---
+
 **Edge Case 6: Reaction vs. Analytical/Predictive**
+*"Really genius? So with 12 teams all vying for 8 knockout round slots, 
+you don't think goal differential will matter? 12 teams will all have 2 
+or 4 points. They always do. Then it comes down to goals. A national 
+team's entire existence can be validated by advancing out of the group 
+stage, and you don't think goal differential is going to decide any of 
+it. I don't think you're too good at how math works. Try adding up the 
+number of games versus the 12 third place teams. I'll wait…"*
 
-*"Really genius? So with 12 teams all vying for 8 knockout round slots, you don't think goal differential will matter? 12 teams will all have 2 or 4 points. They always do. Then it comes down to goals. A national team's entire existence can be validated by advancing out of the group stage, and you don't think goal differential is going to decide any of it. I don't think you're too good at how math works. Try adding up the number of games versus the 12 third place teams. I'll wait…"*
-This comment initially reads as Reaction due to its aggressive, sarcastic, and confrontational tone ("Really genius?", "I'll wait…"). However, removing the reactionary tone, it's main point argues about goal differential and qualification scenarios. Decision: Analytical/Predictive. The decision rule applied: aggressive or contemptuous tone does not determine the label any more than humor or warmth does. If the main argument is explicit mathematical or logical reasoning, it is Analytical/Predictive regardless of how hostile the delivery feels.
+This comment initially reads as Reaction due to its aggressive, sarcastic, 
+and confrontational tone ("Really genius?", "I'll wait…"). However, 
+removing the reactionary tone, the primary substance is a structured 
+mathematical argument about goal differential and qualification scenarios. 
+**Decision: Analytical/Predictive.** Aggressive or contemptuous tone does 
+not determine the label any more than humor or warmth does. If the primary 
+substance is explicit mathematical or logical reasoning, it is 
+Analytical/Predictive regardless of how hostile the delivery feels.
+
+> **Pattern these six cases establish:** Tone in any emotional direction — 
+> warm, humorous, aggressive, sarcastic — does not override the underlying 
+> structure of a comment. Always identify what the comment is *doing*, not 
+> how it *sounds*.
 
 ---
 
-## Evaluation Metrics 
-- The overall project would be measured on how the LLM model `distilbert-base-uncased` is able to distinguish between labels especially nuance. Since some of the comments contain abbreviation and slang, it is important that the model is able to 'understand' the language the user uses in expressing thoughts and opinions in regards to the game being played as well as responses to comments made in each thread.
-    
----
-## Project Success
-- Project will be considered successful, if model is able to identify each label as well as understand nuance associated with each comment
+## Model & Training
+
+**Base model:** `distilbert-base-uncased`
+
+DistilBERT was chosen for its efficiency on a T4 GPU and strong 
+performance on text classification tasks with limited training data.
+
+**Initial hyperparameters** (produced near-random accuracy of 35.9%):
+- Learning rate: 2e-5
+- Epochs: 3
+- Batch size: 16
+
+**Final hyperparameters** (peak validation accuracy 58.97% at epoch 4):
+- Learning rate: 5e-5
+- Epochs: 8
+- Batch size: 8
+
+The model peaked at epoch 4 and began overfitting thereafter. `load_best_model_at_end=True` automatically saved the epoch 4 checkpoint as the final model.
 
 ---
 
-## AI Tool Plan
-- Label stress-testing: Using Claude, I was able to refine my label definitions. For instance, I'll post a comment and its accompanying label, then state my reason. Based on the label definition, Claude will explain why my reasoning may not meet the label definition. For example, my original labels were, observation, reaction, opinion and contextual. However, the comments I had originally labeled as 'contextual' could easily have been categorizes as either ' observation or opinion'. Consequently, Claude identified 'contextual' label and suggest the use of 'analytical/predictive', for it was a better fit. 
+## Evaluation Metrics
 
-- Annotation Assistance - Data was hand-labeled using label definitions, I didn't use Claude to label my data. 
+Performance was measured on the test dataset (39 examples) for both the fine-tuned model and a zero-shot baseline using `llama-3.3-70b-versatile` via the Groq API.
 
+| Model | Accuracy |
+|-------|----------|
+| Zero-shot baseline (Groq llama-3.3-70b-versatile) | 61.5% |
+| Fine-tuned DistilBERT | 56.4% |
+| Difference | -5.1% |
 
-**Milestone 3 — Individual tool implementations:**
-- 
+Fine-tuning significantly improved Analytical/Predictive classification 
+(F1: 0.62 → 0.83) while regressing on Reaction (F1: 0.69 → 0.53). The 
+baseline remained competitive due to Llama's broad pretraining on general 
+language, which handles emotional vocabulary reliably without task-specific 
+training.
 
-**Milestone 4 — Planning loop and state management:**
-- 
+---
+
+## AI Tool Usage
+
+**Label stress-testing:** Claude was used to refine label definitions 
+throughout the planning phase. Comments and their proposed labels were 
+discussed iteratively — Claude would explain when a label assignment 
+didn't align with the stated definition and suggest tighter decision rules. 
+This process led to the most significant taxonomy change: the original 
+"Contextual" label was identified as too ambiguous and was redefined as 
+"Analytical/Predictive", which better captured the forward-looking 
+reasoning pattern the label was intended to identify.
+
+**Annotation:** All data was hand-labeled without AI assistance. Claude was not used to assign labels to any comments in the dataset.
+
+---
+
+## Project Success Criteria
+
+The project will be considered successful if the model is able to identify 
+each label reliably and handle the nuance associated with World Cup 
+discourse, which includes comments that use slang, abbreviations, sarcasm, 
+and mixed emotional/analytical content. A secondary success criterion is 
+honest, well-reasoned error analysis that identifies where and why the 
+model falls short.
 
 ---
 
 ## A Complete Interaction (Step by Step)
 
-Write out what a full user interaction looks like from start to finish — tool call by tool call. Use a specific example query.
+1. Open the Colab notebook and set the runtime to T4 GPU
+2. Run Section 1 — define the label map
+3. Run Section 2 — upload `test_data.csv` when prompted; the notebook 
+   automatically splits the data into train, validation, and test sets 
+   and tokenizes all splits
+4. Run Section 5 — runs the zero-shot Groq baseline on the same test set
+5. Run Section 3 — fine-tunes DistilBERT on the training set; training 
+   takes 5–15 minutes on a T4 GPU
+6. Run Section 4 — evaluates the fine-tuned model on the test set and 
+   generates `confusion_matrix.png`
+7. Run Section 6 — prints the side-by-side baseline vs fine-tuned 
+   comparison and writes `evaluation_results.json`
 
-**Example user query:** "blue Levi jeans costing no more than $40"
-
-**Step 1:**
-<!-- What does the agent do first? Which tool is called? With what input? -->
-- it searches the database matching the description, from search_listing
-**Step 2:**
-<!-- What happens next? What was returned from step 1? What tool is called now? -->
-- based on results, it suggest top two styling pair options. It also reference trend_info to show how it compares to trend. 
-
-**Step 3:**
-<!-- Continue until the full interaction is complete -->
-- If no result is generated, it automatically removes filters and tries again. The error messages generated stage is different from that generated if no item(s) is found.
-- If no result after prompt modification, it notifies the user that the item is not found and ask the user to search for another item. 
-
-**Final output to user:**
-<!-- What does the user actually see at the end? -->
-- Item based on the user's prompt. Also, it will display price comparison for the item as well as similar items that can be paired to create a final look. Furthermore, it'll display a message on recent trends based on the user's selection. Finally, it saves the complete look into profile memory or creates a new style memory for a new user for future reference.
+**Example output from Section 4:**
+Input: *"If they win tonight they're through regardless of the last 
+group game"*  
+Predicted label: **Analytical/Predictive** (confidence: 0.87)
