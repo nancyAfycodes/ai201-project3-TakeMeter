@@ -274,7 +274,7 @@ notebook.
 2. Set the runtime to **T4 GPU** (Runtime → Change runtime type → T4 GPU)
 3. Add your Groq API key to Colab Secrets as `GROQ_API_KEY`
 4. Run all cells in order as follows sections 1, 2, 5 to obtain baseline results then 3, 4, 6 to generate evaluation_results.json and confusion_matrix.png.
-NB. the notebook will prompt you to upload `test_data.csv` when required. In addition, `reddit_worldcup2026_rawdata.xlsx` is the source file.
+NB. the notebook will prompt you to upload `test_data.csv` when required. In addition, `reddit_worldcup2026_rawdata.xlsx` is the source file. In addition, after initial run stated above, once sections 1, 2 ,3 needs to be rerun to obtain result on new sample test data.
 
 
 [Open in Google Colab](https://colab.research.google.com/drive/1JWexdGH1EskPy2g8TUxVgr2mS2dD6SoN?usp=sharing)
@@ -356,4 +356,18 @@ and long comments appeared across multiple error types without a clear
 length-based pattern. The verified patterns were incorporated into the 
 Wrong Prediction Analysis and Reflection sections of the evaluation report.
 
+---
+## Deployed Interface
+
+The classifier is available as an interactive Gradio interface built 
+directly in the Colab notebook. After running Sections 1, 2, and 3, 
+run the Gradio cell at the end of the notebook to launch the interface.
+
+The interface accepts any Reddit comment and returns:
+- Predicted label
+- Confidence score
+- Label description
+- Confidence scores across all four labels
+
+[Open in Google Colab](https://colab.research.google.com/drive/1JWexdGH1EskPy2g8TUxVgr2mS2dD6SoN?usp=sharing)
 ---
