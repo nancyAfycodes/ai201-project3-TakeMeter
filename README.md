@@ -371,3 +371,6 @@ The interface accepts any Reddit comment and returns:
 
 [Open in Google Colab](https://colab.research.google.com/drive/1JWexdGH1EskPy2g8TUxVgr2mS2dD6SoN?usp=sharing)
 ---
+
+## Video Demonstration
+[Demo Video](https://youtu.be/TXwTxocF_xQ)
