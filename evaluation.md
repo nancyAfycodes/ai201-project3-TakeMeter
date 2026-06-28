@@ -134,6 +134,46 @@ Reaction/Opinion boundary.
 
 ---
 
+### Sample Classifications
+
+The following examples were run through the fine-tuned model. Each entry 
+shows the input text, predicted label, and confidence score.
+
+| # | Text | Predicted Label | Confidence | Correct? |
+|---|------|-----------------|------------|----------|
+| 1 | "They lost both matches, and even if they win their last game they can only reach 3 points. Australia and Paraguay already have 3 points and both beat Turkey H2H, so Turkey can't finish above them even if everything else goes their way." | Analytical/Predictive | 0.95 | ✓ |
+| 2 | "As an Argentine fan, loving every bits of this Uruguay downfall." | Reaction | 0.99 | ✓ |
+| 3 | "Cape Verde has single-handedly convinced me that going to 48 teams is not a mistake." | Opinion | 0.97 | ✓ |
+| 4 | "Cape Verde would have qualified for a 32 team world cup. They had 6 wins, 1 draw and 1 loss in qualifying and topped the group ahead of Cameroon." | Observation | 0.97 | ✓ |
+| 5 | "Really genius? So with 12 teams all vying for 8 knockout round slots, you don't think goal differential will matter? 12 teams will all have 2 or 4 points. They always do. Then it comes down to goals. Try adding up the number of games versus the 12 third place teams. I'll wait…" | Opinion | 0.46 | ✗ |
+
+**Notes on selected predictions:**
+
+**Example 1 (correct — Analytical/Predictive, confidence 0.95):**
+The model correctly identified this as Analytical/Predictive with high 
+confidence. The comment contains explicit elimination reasoning — it maps 
+every possible outcome and proves mathematically that Turkey cannot qualify. 
+The distinctive vocabulary (points, H2H, qualifying spot) combined with 
+explicit if/then structure gave the model strong signal to classify 
+correctly.
+
+**Example 2 (correct — Reaction, confidence 0.99):**
+The model's highest confidence prediction. Short, unambiguous emotional 
+expression with clear partisan framing ("As an Argentine fan") and no 
+reasoning or analytical content — exactly the clean Reaction signal the 
+model learned to recognize reliably.
+
+**Example 5 (incorrect — true label: Analytical/Predictive, predicted: 
+Opinion, confidence 0.46):**
+The model's lowest confidence prediction reflects genuine uncertainty — 
+this is the aggressive tone trap documented in Wrong Prediction #2. The 
+sarcastic opener ("Really genius?") and confrontational closing ("I'll 
+wait…") overwhelmed the mathematical reasoning underneath. The very low 
+confidence (0.46) suggests the model was essentially guessing, unable to 
+reconcile the hostile delivery with the analytical substance.
+
+---
+
 #### Dataset limitations
 
 The 5.1% accuracy regression is due to dataset size. With only 182 training examples across four labels, with 29 being Analytical/Predictive training examples, the model didn't have enough examples to learn the subtle distinctions that was intended. A larger dataset of  at least 500 examples per label would likely produce more reliable fine-tuning results. Furthermore, the inherent ambiguity in the Reaction/Opinion boundary, as seen in several edge cases examples illustrates a labeling challenge that can cause model uncertainty. 
