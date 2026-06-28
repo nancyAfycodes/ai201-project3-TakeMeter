@@ -278,3 +278,82 @@ NB. the notebook will prompt you to upload `test_data.csv` when required. In add
 
 
 [Open in Google Colab](https://colab.research.google.com/drive/1JWexdGH1EskPy2g8TUxVgr2mS2dD6SoN?usp=sharing)
+
+---
+
+## Specification Reflection
+
+### Where the spec helped
+
+The project requirement to define a label taxonomy before collecting data was the 
+most valuable constraint. Since being forced to define label types, before labeling, ensured that comments were selected to meet already defined criteria.The requirement that labels be "grounded in community norms" also pushed the taxonomy toward distinctions that are important to World Cup fans (tactical analysis vs. emotional reaction) rather than 
+abstract linguistic categories. This grounding made the annotation process more intuitive and the resulting labels more meaningful.
+
+### Where implementation diverged
+
+I assumed a relatively stable taxonomy from the beginning, however, 
+the labeling required significant revision mid-project. For instance, the original 
+"Contextual" label was identified as too ambiguous and replaced with 
+"Analytical/Predictive" after initial data collection revealed that 
+"Contextual" overlapped too heavily with Observation and Opinion to be 
+consistently applied. This meant re-labeling some of the  comments from scratch after the definitions were finalized. As a result, I used the finalized definitions to label the remaining comments.  
+
+---
+
+## AI Usage
+
+AI assistance was used in two specific ways during this project. All data 
+annotation was performed manually without AI assistance.
+
+### Instance 1 — Label taxonomy refinement
+
+**What I directed Claude to do:** Throughout the planning phase, I shared 
+individual comments and their proposed labels with Claude and asked it to 
+evaluate whether my reasoning was consistent with my stated label 
+definitions.
+
+**What it produced:** Claude identified specific cases where my label 
+assignments contradicted my own definitions. The most significant outcome 
+was the identification that my original "Contextual" label was too 
+ambiguous — comments I labeled Contextual could equally fit Observation 
+or Opinion depending on interpretation. Claude suggested that I redefine the 
+label as "Analytical/Predictive" to more precisely capture the 
+forward-looking reasoning pattern I was trying to identify.
+
+**What I changed or overrode:** I accepted the label redefinition and re-labeled already-labeled comments from scratch using the tightened definitions; these definitions were then use to label other comments before fine-tuning. In addition, I developed a set of decision rules based on the boundary cases Claude identified — particularly the distinction between backward-looking (Opinion) and forward-looking conditionals (Analytical/Predictive), and the principle that tone does not determine the label, structure does.
+
+---
+
+### Instance 2 — Error pattern analysis
+
+**What I directed Claude to do:** After obtaining my wrong predictions 
+from Section 4, I shared all 15 misclassified examples with Claude and 
+asked it to identify common themes and systematic patterns across the 
+errors.
+
+**What it produced:** Claude identified four systematic error patterns:
+- Reaction misclassified as Observation (3 cases) — the model treats 
+  short, low-information comments as Observation regardless of emotional 
+  content
+- Reaction misclassified as Opinion (3 cases) — the model latches onto 
+  counterargument framing even when the comment collapses back into 
+  emotional expression
+- Opinion misclassified as Observation (3 cases) — the model misses 
+  subtle persuasive intent in evaluative comments that use neutral-sounding 
+  language
+- Analytical/Predictive misclassified as Opinion (1 case) — aggressive 
+  or sarcastic tone overwhelms mathematical reasoning underneath
+
+Claude also identified the dominant confused pair: Reaction → 
+Observation/Opinion accounts for 6 of 17 errors (35%), making it the 
+most systematic boundary failure.
+
+**What I changed or overrode:** I verified each pattern by re-reading 
+the misclassified examples myself. The four patterns held up on 
+re-examination. I discarded one suggested pattern — that post length 
+was a systematic factor — after re-reading confirmed that both short 
+and long comments appeared across multiple error types without a clear 
+length-based pattern. The verified patterns were incorporated into the 
+Wrong Prediction Analysis and Reflection sections of the evaluation report.
+
+---
