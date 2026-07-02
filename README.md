@@ -262,8 +262,10 @@ takemeter/
 └── README.md                     # this file
 
 ---
-
 ## Setup
+
+The full pipeline is contained in a single Google Colab notebook 
+designed to run top to bottom in a single pass.
 
 The full pipeline — data loading, tokenization, fine-tuning, baseline 
 classification, and evaluation — is contained in a single Google Colab 
@@ -271,11 +273,13 @@ notebook.
 
 **To run:**
 1. Open the notebook in Google Colab
-2. Set the runtime to **T4 GPU** (Runtime → Change runtime type → T4 GPU)
+2. Set runtime to T4 GPU (Runtime → Change runtime type → T4 GPU)
 3. Add your Groq API key to Colab Secrets as `GROQ_API_KEY`
-4. Run all cells in order as follows sections 1, 2, 5 to obtain baseline results then 3, 4, 6 to generate evaluation_results.json and confusion_matrix.png.
-NB. the notebook will prompt you to upload `test_data.csv` when required. In addition, `reddit_worldcup2026_rawdata.xlsx` is the source file. In addition, after initial run stated above, once sections 1, 2 ,3 needs to be rerun to obtain result on new sample test data.
+4. Run all cells top to bottom — upload `comments.csv` when prompted 
+   in Section 2
+5. Total runtime approximately 15–20 minutes including fine-tuning
 
+NB. the notebook will prompt you to upload `test_data.csv` when required. In addition, `reddit_worldcup2026_rawdata.xlsx` is the source file. 
 
 [Open in Google Colab](https://colab.research.google.com/drive/1JWexdGH1EskPy2g8TUxVgr2mS2dD6SoN?usp=sharing)
 
